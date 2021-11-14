@@ -21,5 +21,8 @@ urlpatterns = [
     path('',views.index,name='index'),
     path('shipments/',views.shipments,name="shipments"),
     path('shipments/<str:shipment>',views.shipment,name="shipments"),
+    path('archive/', views.archive, name="archive"),
+    path('login/', views.login, name="archive"),
+
     path('admin/', admin.site.urls),
 ]
