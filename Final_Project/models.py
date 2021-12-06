@@ -1,4 +1,6 @@
+from django.contrib.auth.models import User
 from django.db import models
+from django.forms import ModelForm
 from django.utils.timezone import now
 from django.utils.translation import gettext_lazy as _
 
@@ -18,25 +20,34 @@ class SerialNumber(models.Model):
 
 
 class Shipment(models.Model):
-
-    client = models.ForeignKey(Client, on_delete=models.CASCADE())
-    shipping_vendor = models.CharField(max_length=200)
-    part_number = models.CharField(max_length=200)
-    work_order = models.CharField(max_length=200)
-    sales_order = models.CharField(max_length=200)
-    quantity = models.IntegerField
-    serial_numbers = models.ForeignKey(SerialNumber)
-    processed = models.BooleanField
-    palletized = models.BooleanField
-    width = models.IntegerField
-    length = models.IntegerField
-    height = models.IntegerField
+    #user = models.ForeignKey(User, null=True, default=1, on_delete=models.CASCADE)
+    user = models.CharField(max_length=200)
+    #client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    client = models.CharField(max_length=200, blank=True)
+    shipping_vendor = models.CharField(max_length=200, blank=True)
+    part_number = models.CharField(max_length=200, blank=True)
+    work_order = models.CharField(max_length=200, blank=True)
+    sales_order = models.CharField(max_length=200, blank=True)
+    qnt = models.CharField(max_length=200, editable=True)
+    #serial_numbers = models.ForeignKey(SerialNumber, on_delete=models.CASCADE)
+    serial_numbers = models.CharField(max_length=2000)
+    processed = models.BooleanField(default=False)
+    palletized = models.BooleanField(default=False)
+    width = models.CharField(max_length=200, editable=True)
+    length = models.CharField(max_length=200, editable=True)
+    height = models.CharField(max_length=200, editable=True)
+    weight = models.CharField(max_length=200, editable=True)
     date_created = models.DateTimeField(default=now, editable=False)
-    date_processed = models.DateTimeField
-    date_shipping = models.DateDield
+    date_processed = models.DateTimeField(null=True)
+    date_shipping = models.DateField(null=True)
 
     def __str__(self):
         return self.client + self.work_order
 
+
+class ShipmentForm(ModelForm):
     class Meta:
-        ordering = ['name']
+        model = Shipment
+        fields = ['user', 'client', 'shipping_vendor', 'part_number',
+                  'work_order', 'qnt', 'serial_numbers', 'processed', 'palletized',
+                  'width','length','height','weight']

@@ -23,6 +23,7 @@ urlpatterns = [
     path('shipments/',views.shipments,name="shipments"),
     path('shipments/<str:shipment>',views.shipment,name="shipments"),
     path('archive/', views.archive, name="archive"),
+    path('manage/', views.manage, name="manage"),
     path('login/', views.login, name="archive"),
     path('register/',views.register,name="register"),
     path('admin/', admin.site.urls),

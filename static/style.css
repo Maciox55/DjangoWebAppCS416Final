@@ -14,13 +14,6 @@ body{
   margin:0;
 }
 
-nav{
-  height:64px;
-  padding:10px;
-  margin:0;
-  background-color:#ddd;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
-}
 
 hr{
   display:block;
@@ -105,6 +98,7 @@ img{
   top:75%;
   z-index:0;
   opacity:50%;
+
   position:absolute;
   width:128px;
   height:128px;
@@ -119,17 +113,6 @@ img{
   display:flex;
 }
 
-.navItem{
-  flex:0 0 32px;
-  height:32px;
-  text-align:center;
-  display:flex;
-  justify-content:center;
-  margin:10px;
-  padding:12px;
-  border: 2px solid rgba(0,0,0,0.15);
-  border-radius:5px;
-}
 
 .header{
   width:128px;
@@ -191,23 +174,6 @@ img{
   align-self:center;
   text-align:center;
   padding-top:100%;
-}
-
-.navItem:hover{
-  background-color:#555;
-  border-color:#555;
-}
-
-.navItem:hover > .icon{
-  color:#fff;
-}
-
-.navSearch{
-  height:60px;
-  border-radious:5px;
-  text-align:center;
-  margin:10px;
-
 }
 
 .searchInput{

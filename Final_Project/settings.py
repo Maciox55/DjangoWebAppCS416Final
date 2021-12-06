@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Final_Project.apps.ShipitConfig',
 ]
 
 MIDDLEWARE = [
