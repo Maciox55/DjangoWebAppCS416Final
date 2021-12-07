@@ -6,7 +6,12 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Client(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200,null=True)
+    streetNumber = models.CharField(max_length=200,null=True)
+    streetName = models.CharField(max_length=200,null=True)
+    city = models.CharField(max_length=200,null=True)
+    state = models.CharField(max_length=200,null=True)
+    zip = models.CharField(max_length=200,null=True)
 
     def __str__(self):
         return self.name
@@ -43,6 +48,12 @@ class Shipment(models.Model):
 
     def __str__(self):
         return self.client + self.work_order
+
+
+class ClientForm(ModelForm):
+    class Meta:
+        model = Client
+        fields = '__all__'
 
 
 class ShipmentForm(ModelForm):
