@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container-fluid">
-        <div>
+        <div class="row">
             <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
                  aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">Add new shipment!</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                                                <div class="modal-body">
-                                                    {{ form }}
-
-
-                                                </div>
                         <div class="modal-body">
                             <form method="post">
                                 {% csrf_token %}
@@ -30,11 +25,12 @@
                                                aria-describedby="clientName" placeholder="Client Name" name="client">
                                     </div>
                                     <div class="form-group">
-                                        <select class="form-select" aria-label="Default select example" name="newClient">
-                                        <option>Select an existing Client</option>
-                                          {% for client in clients %}
-                                              <option value="{{ client.pk }}">{{ client.name }}</option>
-                                          {% endfor %}
+                                        <select class="form-select" aria-label="Default select example"
+                                                name="newClient">
+                                            <option>Select an existing Client</option>
+                                            {% for client in clients %}
+                                                <option value="{{ client.pk }}">{{ client.name }}</option>
+                                            {% endfor %}
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -43,7 +39,7 @@
                                                aria-describedby="shippingVendor"
                                                placeholder="UPS, FedEx, UPS Freight, etc." name="shipping_vendor">
                                     </div>
-                                     <div class="form-group">
+                                    <div class="form-group">
                                         <label for="workOrder">Work Order</label>
                                         <input type="text" class="form-control" id="workOrder"
                                                aria-describedby="workOrder" name="work_order">
@@ -61,7 +57,7 @@
                                     <div class="form-group">
                                         <label for="serial_numbers">Serial Numbers</label>
                                         <input type="text" class="form-control" id="serial_numbers"
-                                                   aria-describedby="serial_numbers" name="serial_numbers">
+                                               aria-describedby="serial_numbers" name="serial_numbers">
                                     </div>
 
 
@@ -89,7 +85,7 @@
 
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="palletized">
-                                            <label class="form-check-label" for="palletized" name="palletized">Palletized?</label>
+                                            <label class="form-check-label" for="palletized" value="palletized" name="palletized">Palletized?</label>
                                         </div>
                                     </div>
 
@@ -107,85 +103,82 @@
             </div>
 
         </div>
-
-
-        <div class="row">
+        <div>
             {% for shipment in shipments %}
-                <div class="col">
-                    <div class="card">
-                        <div class="qnt">{{ shipment.qnt}}</div>
-                        <div class="id">{{ shipment.id }}</div>
-                        <div class="weight">{{ shipment.weight}} LBS</div>
-                        <img src="{% if shipment.palletized %} https://i.imgur.com/7LvH1LI.png {% else %} https://i.imgur.com/Y8sKr40.png{% endif %}" alt="">
-                        <!-- https://i.imgur.com/7LvH1LI.png  -->
-                        <!-- https://i.imgur.com/Y8sKr40.png -->
-                        <div class="fxCol">
-                            <div>
-                                <h1 class="title">{{ shipment.client }}</h1>
-                                <p class="para"><strong>Shipping Via: </strong>{{ shipment.shipping_vendor }}</p>
-                                <hr>
-                            </div>
-                            <div class="fxCol">
-                                <p class="para"><strong>Part Number: </strong> {{ shipment.part_number }}</p>
-                                <p class="para"><strong>Work Order: </strong> {{ shipment.work_order }}</p>
-                                <p class="para"><strong>Sales Order: </strong> {{ shipment.sales_order }}</p>
-                            </div>
-                            <div class="fxCol ">
-                                <p class="para"><strong>Serial Numbers: </strong></p>
-                                <div class="f">
-                                    <p class="para">1009410</p>
-                                    <p class="para">1009411</p>
-                                    <p class="para">1009412</p>
-                                    <p class="para">1009413</p>
-                                    <p class="para">1009414</p>
-                                    <p class="para">1009415</p>
-                                    <p class="para">1009416</p>
-                                    <p class="para">1009417</p>
-                                    <p class="para">1009418</p>
-                                    <p class="para">1009419</p>
-                                    <p class="para">1009420</p>
-                                    <p class="para">1009421</p>
-                                    <p class="para">1009422</p>
-                                    <p class="para">1009423</p>
-                                    <p class="para">1009424</p>
-                                    <p class="para">1009425</p>
-                                    <p class="para">1009426</p>
-                                    <p class="para">1009427</p>
-                                    <p class="para">1009428</p>
-                                    <p class="para">1009429</p>
-                                    <p class="para">1009430</p>
-                                    <p class="para">1009431</p>
-                                    <p class="para">1009432</p>
-                                    <p class="para">1009433</p>
-                                    <p class="para">1009434</p>
-                                    <p class="para">1009435</p>
-                                    <p class="para">1009436</p>
-                                    <p class="para">1009437</p>
-                                    <p class="para">1009438</p>
-                                    <p class="para">1009439</p>
-                                </div>
-                            </div>
+
+                <div class="col card">
+                    <div class="qnt">{{ shipment.qnt }}</div>
+                    <div class="id">{{ shipment.id }}</div>
+                    <div class="weight">{{ shipment.weight }} LBS</div>
+                    <img src="{% if shipment.palletized %} https://i.imgur.com/7LvH1LI.png {% else %} https://i.imgur.com/Y8sKr40.png{% endif %}"
+                         alt="">
+                    <!-- https://i.imgur.com/7LvH1LI.png  -->
+                    <!-- https://i.imgur.com/Y8sKr40.png -->
+                    <div class="fxCol">
+                        <div>
+                            <h1 class="title">{{ shipment.client }}</h1>
+                            <p class="para"><strong>Shipping Via: </strong>{{ shipment.shipping_vendor }}</p>
+                            <hr>
                         </div>
                         <div class="fxCol">
-                            <div class="fxRow">
-                                <div class="fxCol">
-                                    <h4>Dimensions:</h4>
-                                    <p class="para"><strong>Width: </strong> {{ shipment.width }}</p>
-                                    <p class="para"><strong>Length: </strong> {{ shipment.length }}</p>
-                                    <p class="para"><strong>Height: </strong> {{ shipment.height }}</p>
-                                </div>
-                                <div class="fxCol">
-                                    <h4>Information:</h4>
-                                    <p class="para"><strong>Date Created: </strong> {{ shipment.date_created }}</p>
-                                    <p class="para"><strong>Date Processed: </strong> {{ shipment.date_processed }}</p>
-                                    <p class="para"><strong>Shipping Date: </strong> {{ shipment.date_shipping }}</p>
-                                </div>
+                            <p class="para"><strong>Part Number: </strong> {{ shipment.part_number }}</p>
+                            <p class="para"><strong>Work Order: </strong> {{ shipment.work_order }}</p>
+                            <p class="para"><strong>Sales Order: </strong> {{ shipment.sales_order }}</p>
+                        </div>
+                        <div class="fxCol ">
+                            <p class="para"><strong>Serial Numbers: </strong></p>
+                            <div class="f">
+                                <p class="para">1009410</p>
+                                <p class="para">1009411</p>
+                                <p class="para">1009412</p>
+                                <p class="para">1009413</p>
+                                <p class="para">1009414</p>
+                                <p class="para">1009415</p>
+                                <p class="para">1009416</p>
+                                <p class="para">1009417</p>
+                                <p class="para">1009418</p>
+                                <p class="para">1009419</p>
+                                <p class="para">1009420</p>
+                                <p class="para">1009421</p>
+                                <p class="para">1009422</p>
+                                <p class="para">1009423</p>
+                                <p class="para">1009424</p>
+                                <p class="para">1009425</p>
+                                <p class="para">1009426</p>
+                                <p class="para">1009427</p>
+                                <p class="para">1009428</p>
+                                <p class="para">1009429</p>
+                                <p class="para">1009430</p>
+                                <p class="para">1009431</p>
+                                <p class="para">1009432</p>
+                                <p class="para">1009433</p>
+                                <p class="para">1009434</p>
+                                <p class="para">1009435</p>
+                                <p class="para">1009436</p>
+                                <p class="para">1009437</p>
+                                <p class="para">1009438</p>
+                                <p class="para">1009439</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fxCol">
+                        <div class="fxRow">
+                            <div class="fxCol">
+                                <h4>Dimensions:</h4>
+                                <p class="para"><strong>Width: </strong> {{ shipment.width }}</p>
+                                <p class="para"><strong>Length: </strong> {{ shipment.length }}</p>
+                                <p class="para"><strong>Height: </strong> {{ shipment.height }}</p>
+                            </div>
+                            <div class="fxCol">
+                                <h4>Information:</h4>
+                                <p class="para"><strong>Date Created: </strong> {{ shipment.date_created }}</p>
+                                <p class="para"><strong>Date Processed: </strong> {{ shipment.date_processed }}</p>
+                                <p class="para"><strong>Shipping Date: </strong> {{ shipment.date_shipping }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            {% endfor %}
 
+            {% endfor %}
         </div>
-    </div>
 {% endblock %}

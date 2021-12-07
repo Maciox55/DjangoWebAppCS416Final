@@ -4,7 +4,7 @@ from django.template import loader
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from Final_Project.models import Shipment, ShipmentForm, Client
+from Final_Project.models import Shipment, ShipmentForm, Client, ClientForm
 
 
 def index(request):
@@ -23,6 +23,8 @@ def shipments(request):
         form = ShipmentForm(request.POST or None)
 
         if form.is_valid():
+            if request.POST["palletized",False]:
+                form.palletized = True
 
             form.save()
             return redirect('shipments')
@@ -53,7 +55,10 @@ def archive(request):
 @login_required
 def manage(request):
     template = loader.get_template('manage.html')
-    return render(request, 'manage.html')
+    form = ClientForm(request.POST)
+
+    context = {'form':form}
+    return render(request, 'manage.html', context)
 
 
 def register(request):
