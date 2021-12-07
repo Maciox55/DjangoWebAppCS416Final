@@ -17,6 +17,9 @@
                     <div class="mb-3 form-check">
                         <label><a href="/register">Don't have an account? Register here!</a></label>
                     </div>
+                    {% if form.errors %}
+
+                    {% endif %}
                     <input type="submit" value="login" class="btn btn-primary"></input>
                 </form>
             </div>

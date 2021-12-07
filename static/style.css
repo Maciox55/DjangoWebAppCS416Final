@@ -29,7 +29,7 @@ hr{
   justify-content:space-evenly;
 }
 
-.card{
+.scard{
   display:flex;
   margin-right: 15px;
   margin-bottom: 30px;

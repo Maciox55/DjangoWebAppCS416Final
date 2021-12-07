@@ -21,10 +21,12 @@ from . import views, settings
 urlpatterns = [
     path('',views.index,name='index'),
     path('shipments/',views.shipments,name="shipments"),
-    path('shipments/<str:shipment>',views.shipment,name="shipments"),
+    path('shipments/<str:id>',views.shipment,name="shipments"),
     path('archive/', views.archive, name="archive"),
     path('manage/', views.manage, name="manage"),
-    path('login/', views.login, name="archive"),
+    path('manage/<int:id>', views.editClient, name="editClient"),
+    path('manage/<int:id>/', views.deleteClient, name="deleteClient"),
+    path('login/', views.login, name="login"),
     path('register/',views.register,name="register"),
     path('admin/', admin.site.urls),
     path('accounts/',include('django.contrib.auth.urls'))

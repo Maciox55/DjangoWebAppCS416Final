@@ -6,7 +6,7 @@
                 <form method="post">
                     {% csrf_token %}
                     <div class="form-group row">
-                        <h3>New Client</h3>
+                        <h3>Update Client</h3>
                         <label for="username" class=" col-form-label">Client Name</label>
                         <div class="">
                             {{ form.name }}
@@ -46,23 +46,6 @@
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </form>
-            </div>
-            <div class="col">
-                <h3>Clients</h3>
-                {% for client in clients %}
-                    <div class="card m-3" style="width: 24rem;">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ client.name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ client.streetNumber }} {{ client.streetName }} {{ client.city }} , {{ client.state }}, {{ client.zip }}</h6>
-
-                            <form action="{% url 'deleteClient' client.id %}" method="post">
-                                {% csrf_token %}
-                                <a href="{% url 'editClient' client.id %}" class="btn btn-primary">Edit</a>
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-                {% endfor %}
             </div>
         </div>
     </div>
