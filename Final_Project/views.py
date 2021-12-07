@@ -69,7 +69,7 @@ def editClient(request, id):
             'city': client.city, 'state': client.state, 'zip': client.zip})
     context = {'form': form}
     if request.method == 'POST':
-        form = ClientForm(request.POST )
+        form = ClientForm(request.POST, instance=client)
         if form.is_valid():
             form.save()
 
