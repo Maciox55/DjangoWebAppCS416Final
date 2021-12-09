@@ -63,13 +63,16 @@ hr{
   display: flex;
   padding: 15px;
   flex-wrap: wrap;
-  justify-content:space-evenly;
+
+}
+.card {
+  background-image: linear-gradient(to left bottom, #ffffff, #f6f6f8, #edeef0, #e4e5e9, #dadde2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .scard{
   display:flex;
-  margin-right: 15px;
-  margin-bottom: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 5px;
   padding: 15px;
@@ -79,6 +82,20 @@ hr{
   flex-direction: column;
   flex-shrink: 0;
   background-image: linear-gradient(to left bottom, #ffffff, #f6f6f8, #edeef0, #e4e5e9, #dadde2);
+  background-color: #eeeeee;
+
+}
+.gcard{
+  display:flex;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+  padding: 15px;
+  position: relative;
+  width: 350px;
+  height: 550px;
+  flex-direction: column;
+  flex-shrink: 0;
+  background-image: linear-gradient(to left bottom, rgba(199, 255, 152, 0.49), rgba(186, 255, 159, 0.49), rgba(199, 255, 171, 0.47), rgba(223, 255, 200, 0.47), #dadde2);
   background-color: #eeeeee;
 
 }
@@ -140,6 +157,17 @@ hr{
   position:absolute;
   width:128px;
   height:128px;
+  filter:drop-shadow( -5px 5px 5px #555);
+}
+.csimg{
+  top:35%;
+  z-index:0;
+  opacity:50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width:72px;
+  height:72px;
   filter:drop-shadow( -5px 5px 5px #555);
 }
 
@@ -227,4 +255,14 @@ hr{
 .searchInput:click,.searchInput:focus{
   border: 2px solid rgba(0,0,0,0.15);
   border-radius: 15px;
+}
+h2{
+  font-family: Dubai;
+  padding-left: 50px;
+  padding-top: 50px;
+  margin-outside: 25px;
+  text-align: left;
+}
+navbar-brand{
+  font-family: Dubai;
 }
