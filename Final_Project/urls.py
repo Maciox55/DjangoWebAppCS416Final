@@ -19,6 +19,7 @@ from django.urls import path, include
 from . import views, settings
 
 urlpatterns = [
+    path('', views.index,name='index'),
     path('index/',views.index,name='index'),
     path('shipments/',views.shipments,name="shipments"),
     path('shipments/<str:id>',views.shipment,name="shipments"),
