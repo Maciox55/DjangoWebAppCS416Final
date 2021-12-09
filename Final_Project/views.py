@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.template import loader
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login as dj_login
 from django.contrib.auth.decorators import login_required
 from Final_Project.models import Shipment, ShipmentForm, Client, ClientForm
 
@@ -10,6 +10,10 @@ from Final_Project.models import Shipment, ShipmentForm, Client, ClientForm
 def index(request):
     template = loader.get_template('index.html')
     return render(request,'index.html')
+
+def notfound(request):
+    template = loader.get_template('404.html')
+    return render(request,'404.html')
 
 
 @login_required
@@ -71,7 +75,7 @@ def register(request):
             password = form.cleaned_data['password1']
 
             user = authenticate(username=username,password=password)
-            login(request,user)
+            dj_login(request,user)
             return redirect('index')
         else:
             return redirect('index')

@@ -1,8 +1,12 @@
-{% include "navbar.html" %}
-<div class="row">
-        <div class="col">
-            <div class="mx-auto h-100 w-50 p-3 text-center">
-                <p>404 Page Not Found</p>
-            </div>
-        </div>
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="display-4">Well, this is awkward...</h1>
+        <p class="lead"><b>404</b> looks like that page doesn't exist</p>
+        <hr class="my-4">
+        <p>let's just pretend this never happened</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="/index" role="button">Go home</a>
+        </p>
     </div>
+{% endblock %}

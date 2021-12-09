@@ -27,6 +27,7 @@ urlpatterns = [
     path('login/', views.login, name="archive"),
     path('register/',views.register,name="register"),
     path('admin/', admin.site.urls),
-    path('accounts/',include('django.contrib.auth.urls'))
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('404/',views.notfound,name="404"),
 ] + static(settings.STATIC_URL)
 
