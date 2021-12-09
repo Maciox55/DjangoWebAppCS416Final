@@ -24,10 +24,6 @@
                         <a class="nav-link {% if request.resolver_match.url_name == 'archive' %}active{% endif %}"
                            href="/archive">Archive</a>
                     </li>
-
-
-
-
                     {% if user.is_superuser %}
                         <li class="nav-item">
                             <a class="nav-link {% if request.resolver_match.url_name == 'manage' %}active{% endif %}"
