@@ -19,7 +19,7 @@ from django.urls import path, include
 from . import views, settings
 
 urlpatterns = [
-    path('',views.index,name='index'),
+    path('index/',views.index,name='index'),
     path('shipments/',views.shipments,name="shipments"),
     path('shipments/<str:id>',views.shipment,name="shipments"),
     path('archive/', views.archive, name="archive"),
@@ -29,6 +29,7 @@ urlpatterns = [
     path('login/', views.login, name="login"),
     path('register/',views.register,name="register"),
     path('admin/', admin.site.urls),
-    path('accounts/',include('django.contrib.auth.urls'))
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('404/',views.notfound,name="404"),
 ] + static(settings.STATIC_URL)
 

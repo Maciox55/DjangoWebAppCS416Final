@@ -1,7 +1,49 @@
 {% extends 'base.html' %}
 {% block content %}
+
     <div class="container">
-        <!-- Content here -->
-        Homepage
+        <div class="row">
+
+            <div class="col-lg-4">
+                <div id="small-card" style="width: 18rem;">
+                    <img src="https://media.istockphoto.com/photos/rows-of-shelves-picture-id1138429558?k=20&m=1138429558&s=612x612&w=0&h=SEojoXUHl6Di4plxrDgH28aY9J1yCTxFxH5uIlibDeo="
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">404 page</h5>
+                        <p class="card-text">Demonstration of not found page</p>
+                        <a href="/404" class="btn btn-dark shadow-none">Show me</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div id="small-card" style="width: 18rem;">
+                    <img src="https://ak.picdn.net/shutterstock/videos/3635027/thumb/1.jpg"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Don't have an account?</h5>
+                        <p class="card-text">You're just one click away from getting started!</p>
+                        <a href="/register" class="btn btn-dark shadow-none">Register</a>
+                    </div>
+                </div>
+            </div>
+
+
+                <div class="col-lg-4">
+                    <div id="small-card" style="width: 18rem;">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cGVvcGxlJTIwY29tcHV0ZXJ8ZW58MHx8MHx8&w=1000&q=80"
+                             class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Already have an account?</h5>
+                            <p class="card-text">Just click on the button below to log back in!</p>
+                            <a href="/accounts/login" class="btn btn-dark shadow-none">Login</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
     </div>
+
+
 {% endblock %}
