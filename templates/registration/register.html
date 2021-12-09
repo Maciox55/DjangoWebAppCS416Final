@@ -5,44 +5,35 @@
             <div class="col-lg-4 ">
                 <form method="post">
                     {% csrf_token %}
+
                     <div class="mb-3 form-inline">
                         <label class="form-label">Name</label>
                         <input type="text" class="form-control" name="name">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Username</label>
                         <input type="text" class="form-control" name="username">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control" name="email">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Password</label>
                         <input type="password" class="form-control" name="password1">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" name="password2">
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
                     </div>
                     <div class="mb-3 form-check">
                         <p><a href="/accounts/login">Already have an account? Login here!</a></p>
                     </div>
+                    {% if form.errors%}
+                        {{ form.errors }}
+                    {% endif %}
                     <input type="submit" value="Register" class="btn btn-primary"></input>
                 </form>
             </div>

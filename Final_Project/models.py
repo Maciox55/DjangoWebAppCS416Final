@@ -27,8 +27,8 @@ class SerialNumber(models.Model):
 class Shipment(models.Model):
     #user = models.ForeignKey(User, null=True, default=1, on_delete=models.CASCADE)
     user = models.CharField(max_length=200)
-    #client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    client = models.CharField(max_length=200, blank=True)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE)
+    #client = models.CharField(max_length=200, blank=True)
     shipping_vendor = models.CharField(max_length=200, blank=True)
     part_number = models.CharField(max_length=200, blank=True)
     work_order = models.CharField(max_length=200, blank=True)
