@@ -263,6 +263,17 @@ h2{
   margin-outside: 25px;
   text-align: left;
 }
-navbar-brand{
-  font-family: Dubai;
+.navbar-brand.spinning{
+  animation-name: spin;
+  animation-duration: 750ms;
+  animation-timing-function: ease;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
