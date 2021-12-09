@@ -19,17 +19,17 @@
                                         <input type="text" readonly class="form-control-plaintext" id="username"
                                                value="{{ user }}" name="user">
                                     </div>
-                                    <div class="form-group">
-                                        <label for="client">Client</label>
-                                        <input type="text" class="form-control" id="client"
-                                               aria-describedby="clientName" placeholder="Client Name" name="client">
-                                    </div>
+{#                                    <div class="form-group">#}
+{#                                        <label for="client">Client</label>#}
+{#                                        <input type="text" class="form-control" id="client"#}
+{#                                               aria-describedby="clientName" placeholder="Client Name" name="client">#}
+{#                                    </div>#}
                                     <div class="form-group">
                                         <select class="form-select" aria-label="Default select example"
-                                                name="newClient">
+                                                name="client">
                                             <option>Select an existing Client</option>
                                             {% for client in clients %}
-                                                <option value="{{ client.pk }}">{{ client.name }}</option>
+                                                <option value="{{ client.id }}">{{ client.name }}</option>
                                             {% endfor %}
                                         </select>
                                     </div>

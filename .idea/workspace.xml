@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ff40cccd-02f5-4d20-9398-b270ad482b6b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final_Project/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Final_Project/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Final_Project/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/archive.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/archive.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shipments.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shipments.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +49,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HW4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DjangoWebAppCS416Final" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
   </component>
   <component name="RecentsManager">
@@ -100,7 +103,9 @@
       <workItem from="1638646238022" duration="9174000" />
       <workItem from="1638720206548" duration="33061000" />
       <workItem from="1638804199638" duration="5057000" />
-      <workItem from="1638840059180" duration="17882000" />
+      <workItem from="1638840059180" duration="18890000" />
+      <workItem from="1638894472282" duration="3736000" />
+      <workItem from="1639014069316" duration="4772000" />
     </task>
     <servers />
   </component>
