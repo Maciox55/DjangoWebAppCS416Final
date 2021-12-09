@@ -53,8 +53,11 @@
                     <div class="card m-3" style="width: 24rem;">
                         <div class="card-body">
                             <h5 class="card-title">{{ client.name }}</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">{{ client.streetNumber }} {{ client.streetName }} {{ client.city }} , {{ client.state }}, {{ client.zip }}</h6>
-
+                            <h6 class="card-subtitle mb-2 text-muted">{{ client.streetNumber }} {{ client.streetName }} {{ client.city }}
+                                , {{ client.state }}, {{ client.zip }}</h6>
+                            <img class="csimg"
+                                 src="https://freepngimg.com/thumb/customer/1-2-customer-transparent.png"
+                                 alt="">
                             <form action="{% url 'deleteClient' client.id %}" method="post">
                                 {% csrf_token %}
                                 <a href="{% url 'editClient' client.id %}" class="btn btn-primary">Edit</a>

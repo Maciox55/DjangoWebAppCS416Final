@@ -100,10 +100,14 @@
             </div>
 
         </div>
-        <div>
-            {% for shipment in shipments %}
-                <div class="col scard">
-                    <div class="row float-right">
+
+        <div class="container-fluid">
+            <div class="row justify-content-xs-center">
+                {% for shipment in shipments %}
+
+                    <div class="col-xl-3 col-lg-4 col-sm-6 m-3 m-sm-5">
+                        <div class="scard">
+                          <div class="row float-right">
                         <form action="{% url 'deleteShipment' shipment.id %}">
                             {% if user.is_superuser %}
                                 <a class="btn btn-success" href="{% url 'processShipment' shipment.id %}">Process</a>
@@ -111,49 +115,60 @@
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </div>
-                    <div class="qnt">{{ shipment.qnt }}</div>
-                    <div class="id">{{ shipment.id }}</div>
-                    <div class="weight">{{ shipment.weight }} LBS</div>
-                    <img src="{% if shipment.palletized %} https://i.imgur.com/7LvH1LI.png {% else %} https://i.imgur.com/Y8sKr40.png{% endif %}"
-                         alt="">
-                    <!-- https://i.imgur.com/7LvH1LI.png  -->
-                    <!-- https://i.imgur.com/Y8sKr40.png -->
-                    <div class="fxCol">
-                        <div>
-                            <h1 class="title">{{ shipment.client }}</h1>
-                            <p class="para"><strong>Shipping Via: </strong>{{ shipment.shipping_vendor }}</p>
-                            <hr>
-                        </div>
-                        <div class="fxCol">
-                            <p class="para"><strong>Part Number: </strong> {{ shipment.part_number }}</p>
-                            <p class="para"><strong>Work Order: </strong> {{ shipment.work_order }}</p>
-                            <p class="para"><strong>Sales Order: </strong> {{ shipment.sales_order }}</p>
-                        </div>
-                        <div class="fxCol ">
-                            <p class="para"><strong>Serial Numbers: </strong></p>
-                            <div class="f">
-                                <p class="para">{{ shipment.serial_numbers }}</p>
+                            <div class="qnt">{{ shipment.qnt }}</div>
+                            <div class="id">{{ shipment.id }}</div>
+                            <div class="weight">{{ shipment.weight }} LBS</div>
+                            <img class="cimg"
+                                 src="{% if shipment.palletized %} https://i.imgur.com/7LvH1LI.png {% else %} https://i.imgur.com/Y8sKr40.png{% endif %}"
+                                 alt="">
+                            <!-- https://i.imgur.com/7LvH1LI.png  -->
+                            <!-- https://i.imgur.com/Y8sKr40.png -->
+                            <div class="fxCol">
+                                <div>
+                                    <h1 class="title">{{ shipment.client }}</h1>
+                                    <p class="para"><strong>Shipping Via: </strong>{{ shipment.shipping_vendor }}
+                                    </p>
+                                    <hr>
+                                </div>
+                                <div class="fxCol">
+                                    <p class="para"><strong>Part Number: </strong> {{ shipment.part_number }}</p>
+                                    <p class="para"><strong>Work Order: </strong> {{ shipment.work_order }}</p>
+                                    <p class="para"><strong>Sales Order: </strong> {{ shipment.sales_order }}</p>
+                                </div>
+                                <div class="fxCol ">
+                                    <p class="para"><strong>Serial Numbers: </strong></p>
+                                    <div class="f">
+                                        <p class="para">{{ shipment.serial_numbers }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fxCol">
+                                <div class="fxRow">
+                                    <div class="fxCol">
+                                        <h4>Dimensions:</h4>
+                                        <p class="para"><strong>Width: </strong> {{ shipment.width }}</p>
+                                        <p class="para"><strong>Length: </strong> {{ shipment.length }}</p>
+                                        <p class="para"><strong>Height: </strong> {{ shipment.height }}</p>
+                                    </div>
+                                    <div class="fxCol">
+                                        <h4>Information:</h4>
+                                        <p class="para"><strong>Date Created: </strong> {{ shipment.date_created }}
+                                        </p>
+                                        <p class="para"><strong>Date
+                                            Processed: </strong> {{ shipment.date_processed }}
+                                        </p>
+                                        <p class="para"><strong>Shipping
+                                            Date: </strong> {{ shipment.date_shipping }}
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="fxCol">
-                        <div class="fxRow">
-                            <div class="fxCol">
-                                <h4>Dimensions:</h4>
-                                <p class="para"><strong>Width: </strong> {{ shipment.width }}</p>
-                                <p class="para"><strong>Length: </strong> {{ shipment.length }}</p>
-                                <p class="para"><strong>Height: </strong> {{ shipment.height }}</p>
-                            </div>
-                            <div class="fxCol">
-                                <h4>Information:</h4>
-                                <p class="para"><strong>Date Created: </strong> {{ shipment.date_created }}</p>
-                                <p class="para"><strong>Date Processed: </strong> {{ shipment.date_processed }}</p>
-                                <p class="para"><strong>Shipping Date: </strong> {{ shipment.date_shipping }}</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-            {% endfor %}
+
+
+                {% endfor %}
+            </div>
         </div>
 {% endblock %}

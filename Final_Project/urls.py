@@ -19,9 +19,14 @@ from django.urls import path, include
 from Final_Project import views, settings
 
 urlpatterns = [
-    path('', views.index, name='index'),
+
+
+    path('', views.index,name='index'),
+    path('index/',views.index,name='index'),
     path('add/', views.add, name="add"),
-    path('shipments/', views.shipments, name="shipments"),
+    path('shipments/',views.shipments,name="shipments"),
+    path('shipments/<str:id>',views.shipment,name="shipments"),
+
     path('archive/', views.archive, name="archive"),
     path('manage/', views.manage, name="manage"),
     path('manage/<int:id>', views.editClient, name="editClient"),
@@ -31,6 +36,7 @@ urlpatterns = [
     path('login/', views.login, name="login"),
     path('register/', views.register, name="register"),
     path('admin/', admin.site.urls),
-    path('accounts/',include('django.contrib.auth.urls'))
+    path('accounts/',include('django.contrib.auth.urls')),
+    path('404/',views.notfound,name="404"),
 ] + static(settings.STATIC_URL)
 
