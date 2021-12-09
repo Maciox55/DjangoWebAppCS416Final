@@ -1,0 +1,58 @@
+.card {
+    margin-right: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    padding: 0px;
+    width: 350px;
+    height: 350px;
+    background-image: linear-gradient(to left bottom, #ffffff, #f6f6f8, #edeef0, #e0e0e0, #f4f4f4);
+    background-color: #eeeeee;
+
+}
+#small-card {
+    margin-right: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    padding: 3px;
+    width: 350px;
+    height: 375px;
+    background-image: linear-gradient(to left bottom, #ffffff, #f6f6f8, #edeef0, #e0e0e0, #f4f4f4);
+    background-color: #eeeeee;
+
+}
+
+
+
+.container {
+    padding: 25px;
+}
+
+
+.btn-dark {
+    background-color: #B0916E !important;
+    outline: none !important;
+}
+
+.btn-dark:focus {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: #62543c !important;
+    outline: 0 !important;
+
+}
+
+.btn-dark:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: #917c59 !important;
+    outline: none !important;
+
+}
+
+.btn-dark:active {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: #79654a !important;
+    outline: none !important;
+
+}
+
