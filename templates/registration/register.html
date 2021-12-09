@@ -9,6 +9,7 @@
                     <div class="mb-3 form-inline">
                         <label class="form-label">Name</label>
                         <input type="text" class="form-control" name="name">
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Username</label>
@@ -31,12 +32,14 @@
                     <div class="mb-3 form-check">
                         <p><a href="/accounts/login">Already have an account? Login here!</a></p>
                     </div>
-                    {% if form.errors%}
+
+                    {% if form.errors %}
                         {{ form.errors }}
                     {% endif %}
                     <input type="submit" value="Register" class="btn btn-primary"></input>
                 </form>
             </div>
+
 
         </div>
     </div>

@@ -1,4 +1,4 @@
-"""Final_Project URL Configuration
+"""shipit URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -16,18 +16,20 @@ Including another URLconf
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from . import views, settings
+from Final_Project import views, settings
 
 urlpatterns = [
-    path('',views.index,name='index'),
-    path('shipments/',views.shipments,name="shipments"),
-    path('shipments/<str:id>',views.shipment,name="shipments"),
+    path('', views.index, name='index'),
+    path('add/', views.add, name="add"),
+    path('shipments/', views.shipments, name="shipments"),
     path('archive/', views.archive, name="archive"),
     path('manage/', views.manage, name="manage"),
     path('manage/<int:id>', views.editClient, name="editClient"),
     path('manage/<int:id>/', views.deleteClient, name="deleteClient"),
+    path('delete/<int:id>', views.deleteshipment, name="deleteShipment"),
+    path('process/<int:id>', views.processShipment, name="processShipment"),
     path('login/', views.login, name="login"),
-    path('register/',views.register,name="register"),
+    path('register/', views.register, name="register"),
     path('admin/', admin.site.urls),
     path('accounts/',include('django.contrib.auth.urls'))
 ] + static(settings.STATIC_URL)
